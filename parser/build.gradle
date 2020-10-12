@@ -6,25 +6,10 @@
  * user guide available at https://docs.gradle.org/4.4.1/userguide/tutorial_java_projects.html
  */
 
-group = 'org.opensource'
-version = '0.1'
-
 apply plugin: 'java'
-
-sourceCompatibility = 1.11
-
-allprojects {
-	repositories {
-	    jcenter()
-	}
-	task hello {
-        doLast {
-            task -> println "I'm $task.project.name"
-        }
-    }
-}
+apply plugin: 'antlr'
 
 dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.25'
-    testCompile 'org.testng:testng:6.10'
+	antlr 'org.antlr:antlr4:4.8'
 }
+
